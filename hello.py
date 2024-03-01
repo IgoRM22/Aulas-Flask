@@ -25,7 +25,7 @@ def index():
 
 
 @app.route('/user/<name>/<pronto>/<facu>')
-def index(name, pronto, facu):
+def user(name, pronto, facu):
     return render_template('user.html', name=name, pronto=pronto, facu=facu)
 
 
