@@ -1,5 +1,5 @@
 from datetime import datetime
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 from flask_bootstrap import Bootstrap
 from flask_moment import Moment
 
@@ -34,4 +34,4 @@ def context():
     user_agent = request.headers.get('User-Agent')
     url = request.remote_addr
     ip = request.host_url
-    return render_template('contex.html')
+    return render_template('contex.html', user_agent=user_agent, url=url, ip=ip)
