@@ -24,14 +24,14 @@ def index():
      return render_template('index.html', current_time=datetime.utcnow())
 
 
-@app.route('/user/Igor%20Ramos/PT3019284/IFSP')
-def user():
-    return render_template('user.html')
+@app.route('/user/<name>/<pronto>/<facu>')
+def index(name, pronto, facu):
+    return render_template('user.html', name=name, pronto=pronto, facu=facu)
 
 
-@app.route("/contextorequisicao")
-def context():
+@app.route("/contextorequisicao/<name>")
+def user(name):
     user_agent = request.headers.get('User-Agent')
     url = request.remote_addr
     ip = request.host_url
-    return render_template('contex.html', user_agent=user_agent, url=url, ip=ip)
+    return render_template('contex.html', user_agent=user_agent, url=url, ip=ip, name=name)
