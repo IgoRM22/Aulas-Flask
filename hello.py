@@ -30,7 +30,7 @@ def user(name, pronto, facu):
 
 
 @app.route("/contextorequisicao/<name>")
-def user(name):
+def contex(name):
     user_agent = request.headers.get('User-Agent')
     url = request.remote_addr
     ip = request.host_url
