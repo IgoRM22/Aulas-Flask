@@ -29,7 +29,7 @@ def user(name, pronto, facu):
     return render_template('user.html', name=name, pronto=pronto, facu=facu)
 
 
-@app.route("/contextorequisicao/<name>") #nome
+@app.route("/contextorequisicao/<name>") #teste
 def contex(name):
     user_agent = request.headers.get('User-Agent')
     url = request.remote_addr
